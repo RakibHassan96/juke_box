@@ -39,16 +39,8 @@ my_juke.addSong("name4","songs/song4.mp3","img4");
 my_juke.addSong("name5","songs/song5.mp3","img5");
 my_juke.addSong("name5","songs/song6.mp3","img5");
 
-
-console.log(my_juke.getSong(0).name);
-console.log(my_juke.getSong(0).source);
-console.log(my_juke.getSong(0).image);
-
 my_juke.list();
 
-document.getElementById("next").addEventListener("click", function({
-    console.log(document.getElementById("playing"));
-});
 
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
@@ -64,12 +56,12 @@ function add_func(){
 function play(){
       var audio = document.getElementById("juke");
       audio.load();
-      audio.play();};
+      audio.play();
+}
 
 
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
-  console.log(my_songs[0].id);
   for (i = 0; i < my_songs.length ; i++){
     my_songs[i].addEventListener("click", function(){
     var my_play = document.getElementById("playing");
@@ -78,7 +70,7 @@ function add_func(){
       play();
       var my_header = document.getElementById("cur_play");
       my_header.innerText = my_juke.getSong(parseInt((this.id.substring(this.id.length-5,this.id.length-4)))).name;
-
+        
 
     });
 
@@ -88,3 +80,36 @@ function add_func(){
 
 add_func();
 
+document.getElementById("next").addEventListener("click", function(){
+    var playing_song = document.getElementById("playing");
+    var new_song = playing_song;
+    playing_song = playing_song.getAttribute("src");
+    var parsed_name = playing_song.substr(playing_song.length-5, 1);
+    parsed_name = parseInt(parsed_name);
+    
+    parsed_name = (++parsed_name % 6);
+    new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
+    console.log(new_song);
+    var get_song_number = playing_song;
+    play();
+});
+       
+document.getElementById("prev").addEventListener("click", function(){
+    var playing_song = document.getElementById("playing");
+    var new_song = playing_song;
+    playing_song = playing_song.getAttribute("src");
+    var parsed_name = playing_song.substr(playing_song.length-5, 1);
+    parsed_name = parseInt(parsed_name);
+    
+    if(parsed_name == 0){
+        parsed_name = 5;
+    }
+    else{
+        parsed_name--;
+    }
+    new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
+    console.log(new_song);
+    var get_song_number = playing_song;
+    play();
+});
+        
