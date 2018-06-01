@@ -10,12 +10,13 @@
   <body>
 
     <h1> Juke Box </h1>
-
-
+    <img id="my_img" src="songs/song0.jpg" width="400" height="400">
+    <br>
+    <br> <br>
     <audio controls autoplay id="juke">
       <source id="playing" src="songs/song0.mp3">
     </audio>
-    
+
     <br> <br>
     <div id="buttons">
       <img id="prev" src="icons/previous.png">
@@ -23,7 +24,7 @@
       <img id="play" src="icons/play.png" onclick="playSong()">
       <img id="next" src="icons/next.png">
     </div>
-    
+
     <div id="songs">
       <h2 id="cur_play">My Songs</h2>
       <ul id="song_list"></ul>

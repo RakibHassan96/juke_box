@@ -69,6 +69,7 @@ function add_func(){
       play();
       var my_header = document.getElementById("cur_play");
       my_header.innerText = my_juke.getSong(parseInt((this.id.substring(this.id.length-5,this.id.length-4)))).name;
+      document.getElementById("my_img").src = "songs/song"+this.id.substring(this.id.length-5,this.id.length-4)+".jpg";
 
 
     });
@@ -100,6 +101,8 @@ document.getElementById("next").addEventListener("click", function(){
     new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
     console.log(new_song);
     var get_song_number = playing_song;
+    document.getElementById("my_img").src = "songs/song"+parsed_name+".jpg";
+
     play();
 });
 
@@ -119,5 +122,7 @@ document.getElementById("prev").addEventListener("click", function(){
     new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
     console.log(new_song);
     var get_song_number = playing_song;
+    document.getElementById("my_img").src = "songs/song"+parsed_name+".jpg";
+
     play();
 });
