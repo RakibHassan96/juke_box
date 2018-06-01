@@ -32,13 +32,12 @@ jukebox.prototype.list = function(){
 };
 
 var my_juke = new jukebox();
-my_juke.addSong("name1","songs/song1.mp3","img1");
-my_juke.addSong("name2","songs/song2.mp3","img2");
-my_juke.addSong("name3","songs/song3.mp3","img3");
-my_juke.addSong("name4","songs/song4.mp3","img4");
-my_juke.addSong("name5","songs/song5.mp3","img5");
-my_juke.addSong("name5","songs/song6.mp3","img5");
-
+my_juke.addSong("I don't even speak spanish lol - XXXTENTACION","k2","img");
+my_juke.addSong("Never Gonna Give You Up - Rick Astley","k22","img2");
+my_juke.addSong("Delicate - Taylor Swift","k23","img3");
+my_juke.addSong("Diamonds (Remix) - Kanye West","k24","img4");
+my_juke.addSong("LOVE. - Kendrick Lamar ft. Zacari","k25","img5");
+my_juke.addSong("Baby - Justin Bieber","k25","img5");
 my_juke.list();
 
 
@@ -70,13 +69,23 @@ function add_func(){
       play();
       var my_header = document.getElementById("cur_play");
       my_header.innerText = my_juke.getSong(parseInt((this.id.substring(this.id.length-5,this.id.length-4)))).name;
-        
+
 
     });
 
   };
 
 };
+
+var playing = document.getElementById("juke");
+
+function pauseSong() {
+  playing.pause();
+}
+
+function playSong() {
+  playing.play();
+}
 
 add_func();
 
@@ -86,21 +95,21 @@ document.getElementById("next").addEventListener("click", function(){
     playing_song = playing_song.getAttribute("src");
     var parsed_name = playing_song.substr(playing_song.length-5, 1);
     parsed_name = parseInt(parsed_name);
-    
+
     parsed_name = (++parsed_name % 6);
     new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
     console.log(new_song);
     var get_song_number = playing_song;
     play();
 });
-       
+
 document.getElementById("prev").addEventListener("click", function(){
     var playing_song = document.getElementById("playing");
     var new_song = playing_song;
     playing_song = playing_song.getAttribute("src");
     var parsed_name = playing_song.substr(playing_song.length-5, 1);
     parsed_name = parseInt(parsed_name);
-    
+
     if(parsed_name == 0){
         parsed_name = 5;
     }
@@ -112,4 +121,3 @@ document.getElementById("prev").addEventListener("click", function(){
     var get_song_number = playing_song;
     play();
 });
-        
