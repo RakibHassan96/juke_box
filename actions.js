@@ -47,6 +47,7 @@ console.log(my_juke.getSong(0).image);
 my_juke.list();
 
 
+<<<<<<< HEAD
 document.getElementById("next").addEventListener("click", function({
     console.log(document.getElementById("playing"));
 });
@@ -62,3 +63,27 @@ function add_func(){
 
 }
 
+=======
+function play(){
+      var audio = document.getElementById("juke");
+      audio.load();
+      audio.play();};
+
+
+function add_func(){
+  var my_songs = document.getElementsByTagName("li");
+  console.log(my_songs[0].id);
+  for (i = 0; i < my_songs.length ; i++){
+    my_songs[i].addEventListener("click", function(){
+    var my_play = document.getElementById("playing");
+      //console.log("songs/"+ this.id);
+      my_play.setAttribute("src","songs/"+ this.id)
+      play();
+    });
+
+  };
+
+};
+
+add_func();
+>>>>>>> master
