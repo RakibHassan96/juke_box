@@ -56,7 +56,8 @@ function add_func(){
 function play(){
       var audio = document.getElementById("juke");
       audio.load();
-      audio.play();};
+      audio.play();
+}
 
 
 function add_func(){
@@ -67,6 +68,10 @@ function add_func(){
       //console.log("songs/"+ this.id);
       my_play.setAttribute("src","songs/"+ this.id)
       play();
+      var my_header = document.getElementById("cur_play");
+      my_header.innerText = my_juke.getSong(parseInt((this.id.substring(this.id.length-5,this.id.length-4)))).name;
+        
+
     });
 
   };
@@ -77,9 +82,34 @@ add_func();
 
 document.getElementById("next").addEventListener("click", function(){
     var playing_song = document.getElementById("playing");
-    playing_song = playing_song.getAttribute;
-    console.log(playing_song);
+    var new_song = playing_song;
+    playing_song = playing_song.getAttribute("src");
+    var parsed_name = playing_song.substr(playing_song.length-5, 1);
+    parsed_name = parseInt(parsed_name);
+    
+    parsed_name = (++parsed_name % 6);
+    new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
+    console.log(new_song);
     var get_song_number = playing_song;
-    //console.log(playing_song.setAttribute("src","songs/song"+ this.id));
+    play();
 });
-                                                 
+       
+document.getElementById("prev").addEventListener("click", function(){
+    var playing_song = document.getElementById("playing");
+    var new_song = playing_song;
+    playing_song = playing_song.getAttribute("src");
+    var parsed_name = playing_song.substr(playing_song.length-5, 1);
+    parsed_name = parseInt(parsed_name);
+    
+    if(parsed_name == 0){
+        parsed_name = 5;
+    }
+    else{
+        parsed_name--;
+    }
+    new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
+    console.log(new_song);
+    var get_song_number = playing_song;
+    play();
+});
+        
