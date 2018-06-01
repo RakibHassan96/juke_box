@@ -39,18 +39,8 @@ my_juke.addSong("name4","songs/song4.mp3","img4");
 my_juke.addSong("name5","songs/song5.mp3","img5");
 my_juke.addSong("name5","songs/song6.mp3","img5");
 
-
-console.log(my_juke.getSong(0).name);
-console.log(my_juke.getSong(0).source);
-console.log(my_juke.getSong(0).image);
-
 my_juke.list();
 
-
-<<<<<<< HEAD
-document.getElementById("next").addEventListener("click", function({
-    console.log(document.getElementById("playing"));
-});
 
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
@@ -63,7 +53,6 @@ function add_func(){
 
 }
 
-=======
 function play(){
       var audio = document.getElementById("juke");
       audio.load();
@@ -72,7 +61,6 @@ function play(){
 
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
-  console.log(my_songs[0].id);
   for (i = 0; i < my_songs.length ; i++){
     my_songs[i].addEventListener("click", function(){
     var my_play = document.getElementById("playing");
@@ -86,4 +74,12 @@ function add_func(){
 };
 
 add_func();
->>>>>>> master
+
+document.getElementById("next").addEventListener("click", function(){
+    var playing_song = document.getElementById("playing");
+    playing_song = playing_song.getAttribute;
+    console.log(playing_song);
+    var get_song_number = playing_song;
+    //console.log(playing_song.setAttribute("src","songs/song"+ this.id));
+});
+                                                 
