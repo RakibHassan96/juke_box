@@ -21,8 +21,13 @@ jukebox.prototype.getSong = function(index){
 };
 
 jukebox.prototype.list = function(){
+  var my_list = document.getElementById("song_list");
   for (i = 0; i < this.songs.length ; i++){
-    console.log("Name is: " + this.songs[i].name);
+    var node = document.createElement("li")
+    var temp_li = document.createTextNode(this.songs[i].name);
+    node.appendChild(temp_li);
+    my_list.appendChild(node);
+    document.getElementsByTagName("li")[i].setAttribute("id", "song"+i+".mp3");
   }
 };
 
@@ -42,6 +47,18 @@ console.log(my_juke.getSong(0).image);
 my_juke.list();
 
 
-document.getElementById("next").addEventListener("click", function()){
-    var song_playing = document.getElementsByTagName("")
+document.getElementById("next").addEventListener("click", function({
+    console.log(document.getElementById("playing"));
+});
+
+function add_func(){
+  var my_songs = document.getElementsByTagName("li");
+  for (i = 0; i < my_songs.length ; i++){
+    my_songs[i].addEventListener("click", function(){
+      var my_play = document.getElementById("playing");
+    });
+
+  }
+
 }
+
