@@ -46,6 +46,16 @@ console.log(my_juke.getSong(0).image);
 
 my_juke.list();
 
+var playing = document.getElementById("playing");
+
+function pauseSong() {
+  playing.pause();
+}
+
+function playSong() {
+  playing.play();
+}
+
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
   console.log(my_songs[0].id);
