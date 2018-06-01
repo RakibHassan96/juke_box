@@ -46,6 +46,13 @@ console.log(my_juke.getSong(0).image);
 
 my_juke.list();
 
+
+function play(){
+      var audio = document.getElementById("juke");
+      audio.load();
+      audio.play();};
+
+
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
   console.log(my_songs[0].id);
@@ -54,7 +61,7 @@ function add_func(){
     var my_play = document.getElementById("playing");
       //console.log("songs/"+ this.id);
       my_play.setAttribute("src","songs/"+ this.id)
-      console.log(my_play.src);
+      play();
     });
 
   };
