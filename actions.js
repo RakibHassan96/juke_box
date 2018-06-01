@@ -62,6 +62,10 @@ function add_func(){
       //console.log("songs/"+ this.id);
       my_play.setAttribute("src","songs/"+ this.id)
       play();
+      var my_header = document.getElementById("cur_play");
+      my_header.innerText = my_juke.getSong(parseInt((this.id.substring(this.id.length-5,this.id.length-4)))).name;
+
+
     });
 
   };
