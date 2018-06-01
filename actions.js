@@ -21,8 +21,13 @@ jukebox.prototype.getSong = function(index){
 };
 
 jukebox.prototype.list = function(){
+  var my_list = document.getElementById("song_list");
   for (i = 0; i < this.songs.length ; i++){
-    console.log("Name is: " + this.songs[i].name);
+    var node = document.createElement("li")
+    var temp_li = document.createTextNode(this.songs[i].name);
+    node.appendChild(temp_li);
+    my_list.appendChild(node);
+    document.getElementsByTagName("li")[i].setAttribute("id", "song"+i+".mp3");
   }
 };
 
