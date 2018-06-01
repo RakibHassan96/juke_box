@@ -32,12 +32,12 @@ jukebox.prototype.list = function(){
 };
 
 var my_juke = new jukebox();
-my_juke.addSong("name","k2","img");
-my_juke.addSong("name2","k22","img2");
-my_juke.addSong("name3","k23","img3");
-my_juke.addSong("name4","k24","img4");
-my_juke.addSong("name5","k25","img5");
-
+my_juke.addSong("name1","songs/song1.mp3","img1");
+my_juke.addSong("name2","songs/song2.mp3","img2");
+my_juke.addSong("name3","songs/song3.mp3","img3");
+my_juke.addSong("name4","songs/song4.mp3","img4");
+my_juke.addSong("name5","songs/song5.mp3","img5");
+my_juke.addSong("name5","songs/song6.mp3","img5");
 
 
 console.log(my_juke.getSong(0).name);
@@ -46,6 +46,20 @@ console.log(my_juke.getSong(0).image);
 
 my_juke.list();
 
+document.getElementById("next").addEventListener("click", function({
+    console.log(document.getElementById("playing"));
+});
+
+function add_func(){
+  var my_songs = document.getElementsByTagName("li");
+  for (i = 0; i < my_songs.length ; i++){
+    my_songs[i].addEventListener("click", function(){
+      var my_play = document.getElementById("playing");
+    });
+
+  }
+
+}
 
 function play(){
       var audio = document.getElementById("juke");
@@ -73,3 +87,4 @@ function add_func(){
 };
 
 add_func();
+
