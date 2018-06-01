@@ -45,3 +45,14 @@ console.log(my_juke.getSong(0).source);
 console.log(my_juke.getSong(0).image);
 
 my_juke.list();
+
+function add_func(){
+  var my_songs = document.getElementsByTagName("li");
+  for (i = 0; i < my_songs.length ; i++){
+    my_songs[i].addEventListener("click", function(){
+      var my_play = document.getElementById("playing");
+    });
+
+  }
+
+}
