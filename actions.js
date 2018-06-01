@@ -48,11 +48,17 @@ my_juke.list();
 
 function add_func(){
   var my_songs = document.getElementsByTagName("li");
+  console.log(my_songs[0].id);
   for (i = 0; i < my_songs.length ; i++){
     my_songs[i].addEventListener("click", function(){
-      var my_play = document.getElementById("playing");
+    var my_play = document.getElementById("playing");
+      //console.log("songs/"+ this.id);
+      my_play.setAttribute("src","songs/"+ this.id)
+      console.log(my_play.src);
     });
 
-  }
+  };
 
-}
+};
+
+add_func();
