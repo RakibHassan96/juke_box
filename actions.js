@@ -32,12 +32,12 @@ jukebox.prototype.list = function(){
 };
 
 var my_juke = new jukebox();
-my_juke.addSong("name","k2","img");
-my_juke.addSong("name2","k22","img2");
-my_juke.addSong("name3","k23","img3");
-my_juke.addSong("name4","k24","img4");
-my_juke.addSong("name5","k25","img5");
-
+my_juke.addSong("I don't even speak spanish lol - XXXTENTACION","k2","img");
+my_juke.addSong("Never Gonna Give You Up - Rick Astley","k22","img2");
+my_juke.addSong("Delicate - Taylor Swift","k23","img3");
+my_juke.addSong("Diamonds (Remix) - Kanye West","k24","img4");
+my_juke.addSong("LOVE. - Kendrick Lamar ft. Zacari","k25","img5");
+my_juke.addSong("Baby - Justin Bieber","k25","img5");
 
 
 console.log(my_juke.getSong(0).name);
@@ -46,7 +46,7 @@ console.log(my_juke.getSong(0).image);
 
 my_juke.list();
 
-var playing = document.getElementById("playing");
+var playing = document.getElementById("juke");
 
 function pauseSong() {
   playing.pause();
