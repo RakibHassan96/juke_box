@@ -40,3 +40,13 @@ console.log(my_juke.getSong(0).source);
 console.log(my_juke.getSong(0).image);
 
 my_juke.list();
+
+var playing = document.getElementById("playing");
+
+function pauseSong() {
+  playing.pause();
+}
+
+function playSong() {
+  playing.play();
+}

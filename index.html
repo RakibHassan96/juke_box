@@ -7,9 +7,14 @@
   <body>
 
 
-<audio controls>
-  <source src="songs/song2.mp3">
-</audio>
+	<audio controls id="playing">
+	  	<source src="songs/song1.mp3">
+	</audio>
+
+	<br>
+
+	<img id="pause" src="icons/pause.png" onclick="pauseSong()">
+	<img id="play" src="icons/play.png" onclick="playSong()">
 
   </body>
   <script src="actions.js"> </script>
