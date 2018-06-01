@@ -100,8 +100,6 @@ document.getElementById("next").addEventListener("click", function(){
     new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
     console.log(new_song);
     var get_song_number = playing_song;
-    var my_header = document.getElementById("cur_play");
-    my_header.innerText = my_juke.getSong(parseInt(parsed_name)).name;
     play();
 });
 
@@ -121,7 +119,5 @@ document.getElementById("prev").addEventListener("click", function(){
     new_song.setAttribute("src", "songs/song" + parsed_name + ".mp3");
     console.log(new_song);
     var get_song_number = playing_song;
-    var my_header = document.getElementById("cur_play");
-    my_header.innerText = my_juke.getSong(parseInt(parsed_name)).name;
     play();
 });
