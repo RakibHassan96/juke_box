@@ -30,3 +30,6 @@ h2 {
 	font-size: 30px;
 }
 
+li {
+  border-style: groove;
+}
